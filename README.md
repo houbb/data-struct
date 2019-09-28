@@ -8,8 +8,6 @@
 
 data-struct 数据结构
 
-rate-limit 限流
-
 ======================
 
 math 数学
@@ -18,14 +16,28 @@ algorithm 算法
 
     load-balance 负载均衡
 
-    hash  hash 算法
+    hash 哈希
 
-    sort
+    sort 排序
 
-    query
+    query 查询
 
-secret 加密
+    secret 加密
 
-compress 压缩
+    rate-limit 限流
 
-sensitive 脱敏
+    Bloom-filter 布隆过滤器
+
+==============================
+
+compress 压缩  Done
+
+sensitive 脱敏  Done
+
+sisyphus 重试 Done
+
+=========================
+
+sandglass 调度
+
+nameserver 注册中心
