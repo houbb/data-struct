@@ -1,4 +1,4 @@
-package com.github.houbb.data.struct.core.util;
+package com.github.houbb.data.struct.core.util.map;
 
 import java.util.Map;
 

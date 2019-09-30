@@ -1,4 +1,4 @@
-package com.github.houbb.data.struct.core.util;
+package com.github.houbb.data.struct.core.util.map;
 
 import com.github.houbb.data.struct.util.HashUtil;
 import com.github.houbb.heaven.util.lang.ObjectUtil;
@@ -97,9 +97,9 @@ public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V> {
         int index = HashUtil.indexFor(hash, this.table.size());
 
         // 判断是否为替换
-        List<Map.Entry<K,V>> entryList = this.table.get(index);
+        List<Entry<K,V>> entryList = this.table.get(index);
         // 遍历
-        for(Map.Entry<K,V> entry : entryList) {
+        for(Entry<K,V> entry : entryList) {
             // 二者的 key 都为 null，或者二者的 key equals()
             final K entryKey = entry.getKey();
             if(ObjectUtil.isNull(key, entryKey)
@@ -142,7 +142,7 @@ public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V> {
     }
 
     @Override
-    public Set<Map.Entry<K, V>> entrySet() {
+    public Set<Entry<K, V>> entrySet() {
         return null;
     }
 
