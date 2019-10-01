@@ -1,7 +1,6 @@
 package com.github.houbb.data.struct.core.util.list;
 
 import com.github.houbb.heaven.util.lang.ObjectUtil;
-import com.github.houbb.heaven.util.util.ArrayUtil;
 import com.github.houbb.heaven.util.util.CollectionUtil;
 
 import java.io.Serializable;
@@ -12,8 +11,6 @@ import java.util.*;
  * （1）实现基本功能
  * （2）提升性能
  * （3）抽象基础父类
- *
- * TODO: 对于结合元素创建/集合创建
  *
  * 构造器是有缺陷的，因为无法区分到底是 size 还是单个元素信息。
  * @author binbin.hou
@@ -304,19 +301,18 @@ public class ArrayList<E> implements List<E>, Serializable {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new ArrayListIterator();
     }
 
     @Override
     public ListIterator<E> listIterator() {
-        return null;
+        return new ArrayListListIterator(0);
     }
 
     @Override
     public ListIterator<E> listIterator(int index) {
-        return null;
+        return new ArrayListListIterator(index);
     }
-
 
 
     @Override
@@ -410,6 +406,74 @@ public class ArrayList<E> implements List<E>, Serializable {
     private void indexRangeCheck(final int index) {
         if(index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index out of range: " + index + ", it must be in [0, " + size +"]");
+        }
+    }
+
+    private class ArrayListIterator implements Iterator<E> {
+
+        /**
+         * 游标
+         */
+        protected int cursor;
+
+        @Override
+        public boolean hasNext() {
+            return cursor < size;
+        }
+
+        @Override
+        @SuppressWarnings("unchecked")
+        public E next() {
+            E result = ArrayList.this.get(cursor);
+            cursor++;
+            return result;
+        }
+
+        @Override
+        public void remove() {
+            ArrayList.this.remove(cursor);
+        }
+
+    }
+
+    private class ArrayListListIterator extends ArrayListIterator implements ListIterator<E> {
+
+        public ArrayListListIterator(final int index) {
+            super();
+            cursor = index;
+        }
+
+        @Override
+        public boolean hasPrevious() {
+            return cursor != 0;
+        }
+
+        @Override
+        public int nextIndex() {
+            return cursor;
+        }
+
+        @Override
+        public int previousIndex() {
+            return cursor-1;
+        }
+
+        @Override
+        public E previous() {
+            return ArrayList.this.get(--cursor);
+        }
+
+        @Override
+        public void set(E e) {
+            int lastReturn = cursor-1;
+            ArrayList.this.set(lastReturn, e);
+        }
+
+        @Override
+        public void add(E e) {
+            // 当前 index 添加元素
+            ArrayList.this.add(cursor, e);
+            cursor++;
         }
     }
 

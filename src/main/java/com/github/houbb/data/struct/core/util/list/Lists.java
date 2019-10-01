@@ -10,6 +10,7 @@ import java.util.List;
  *
  * 数组工具类
  * @since 0.0.1
+ * @author binbin.hou
  */
 public final class Lists {
 
@@ -36,18 +37,6 @@ public final class Lists {
         List<E> list = new ArrayList<>(elements.length);
         list.addAll(Arrays.asList(elements));
         return list;
-    }
-
-    public static void main(String[] args) {
-        List list = new java.util.ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(5);
-
-        List list2 = Arrays.asList(3);
-        list.removeAll(list2);
-        System.out.println(list);
     }
 
 }
