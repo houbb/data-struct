@@ -9,6 +9,11 @@ import java.util.List;
 /**
  *
  * 数组工具类
+ * （1）ArrayList
+ * （2）LinkedList
+ * （3）CowList
+ * （4）SkipList
+ *
  * @since 0.0.1
  * @author binbin.hou
  */

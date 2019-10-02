@@ -1,0 +1,58 @@
+package com.github.houbb.data.struct.core.util.list;
+
+/**
+ * 链表节点
+ * @author binbin.hou
+ * @since 0.0.1
+ * @param <E> 泛型
+ */
+class Node<E> {
+
+    /**
+     * 当前元素节点
+     */
+    private E value;
+
+    /**
+     * 前一个节点
+     */
+    private Node<E> previous;
+
+    /**
+     * 后一个节点
+     */
+    private Node<E> next;
+
+    public Node(E value, Node<E> previous, Node<E> next) {
+        this.value = value;
+        this.previous = previous;
+        this.next = next;
+    }
+
+    public E value() {
+        return value;
+    }
+
+    public Node<E> value(E value) {
+        this.value = value;
+        return this;
+    }
+
+    public Node<E> previous() {
+        return previous;
+    }
+
+    public Node<E> previous(Node<E> previous) {
+        this.previous = previous;
+        return this;
+    }
+
+    public Node<E> next() {
+        return next;
+    }
+
+    public Node<E> next(Node<E> next) {
+        this.next = next;
+        return this;
+    }
+}

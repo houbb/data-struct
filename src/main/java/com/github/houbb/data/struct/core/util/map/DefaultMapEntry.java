@@ -4,6 +4,7 @@ import java.util.Map;
 
 /**
  * 默认的 map entry
+ * TODO: 调整为 fluent 模式。
  * @author binbin.hou
  * @since 0.0.1
  */
