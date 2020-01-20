@@ -17,7 +17,7 @@ import java.util.*;
  * 这样是为了避免 hash 的桶数太少，导致的查找性能下降。
  * 个人觉得，现在觉得这种方式很浪费。
  * 比如：容量=8 当 size=6 的时候可能就要进行 rehash
- * （size >= 阈值，且 hash 的位置，已经存在元素。）
+ * （size &gte; 阈值，且 hash 的位置，已经存在元素。）
  * 某种角度而言，这是没有必要的。
  * 因为即使在同一个桶上的数据出现重复，如果桶中链表的数量小于8，其实遍历性能并不差。
  *
@@ -86,9 +86,9 @@ public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V> {
 
     /**
      * 存储一个值
-     * @param key
-     * @param value
-     * @return
+     * @param key 键
+     * @param value 值
+     * @return 值
      */
     @Override
     public V put(K key, V value) {

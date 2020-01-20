@@ -16,6 +16,7 @@ public final class HashUtil {
      * otherwise encounter collisions for hashCodes that do not differ
      * in lower bits. Note: Null keys always map to hash 0, thus index 0.
      * @param object 对象
+     * @return hash 結果
      */
     public static int hash(Object object) {
         if(object == null) {
@@ -29,6 +30,7 @@ public final class HashUtil {
      * Returns index for hash code h.
      * @param h hash 值
      * @param length 整体长度
+     * @return hash 結果
      */
     public static int indexFor(int h, int length) {
         return h % length;
