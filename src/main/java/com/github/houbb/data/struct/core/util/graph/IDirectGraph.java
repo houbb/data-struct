@@ -50,6 +50,7 @@ public interface IDirectGraph<V> extends IBFS<V>, IDFS<V> {
      * 移除边
      * @param edge 边信息
      * @since 0.0.2
+     * @return 是否成功
      */
     boolean removeEdge(final Edge<V> edge);
 
@@ -58,6 +59,7 @@ public interface IDirectGraph<V> extends IBFS<V>, IDFS<V> {
      * @param from 开始节点
      * @param to 结束节点
      * @since 0.0.2
+     * @return 边信息
      */
     Edge<V> getEdge(final int from, final int to);
 
