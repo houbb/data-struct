@@ -1,6 +1,7 @@
 package com.github.houbb.data.struct.core.util.graph;
 
 import com.github.houbb.data.struct.api.IBFS;
+import com.github.houbb.data.struct.api.IDFS;
 import com.github.houbb.data.struct.core.util.graph.component.Edge;
 
 /**
@@ -13,7 +14,7 @@ import com.github.houbb.data.struct.core.util.graph.component.Edge;
  * @author binbin.hou
  * @since 0.0.2
  */
-public interface IDirectGraph<V> extends IBFS<V> {
+public interface IDirectGraph<V> extends IBFS<V>, IDFS<V> {
 
     /**
      * 新增顶点

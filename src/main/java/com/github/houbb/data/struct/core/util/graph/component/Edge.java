@@ -27,6 +27,11 @@ public class Edge<V> {
      */
     private double weight;
 
+    public Edge(V from, V to) {
+        this.from = from;
+        this.to = to;
+    }
+
     public V getFrom() {
         return from;
     }

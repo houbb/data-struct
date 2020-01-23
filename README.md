@@ -22,6 +22,6 @@ jdk 1.7+
 <dependency>
     <groupId>com.github.houbb</groupId>
     <artifactId>data-struct</artifactId>
-    <version>0.0.1</version>
+    <version>${最新版本}</version>
 </dependency>
 ```

@@ -10,9 +10,10 @@ public interface IBFS<V> {
 
     /**
      * 广度遍历
+     * @param root 根节点
      * @return 遍历
      * @since 0.0.2
      */
-    List<V> bfs();
+    List<V> bfs(final V root);
 
 }
