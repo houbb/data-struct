@@ -152,10 +152,10 @@ public class ArrayList<E> implements List<E>, Serializable {
     /**
      * 移除集合所有信息
      * （1）批量删除，避免多次合并集合。
-     * （2）可以对 remove 单个进行优化，统一为单个的特例。
+     * （2）可以对 removeVertex 单个进行优化，统一为单个的特例。
      *
      * 统一为使用 object 进行删除。
-     * 这里因为单个 remove(index) 需要返回下标导致二者无法统一。
+     * 这里因为单个 removeVertex(index) 需要返回下标导致二者无法统一。
      *
      * @see #remove(int) 按照下标移除
      * @see #remove(Object) 按照对象移除
