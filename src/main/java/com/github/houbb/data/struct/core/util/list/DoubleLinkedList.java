@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.ListIterator;
 
 /**
- * 链表
+ * 双向链表
  * @author binbin.hou
  * @since 0.0.1
  */
-public class LinkedList<E> implements List<E> {
+public class DoubleLinkedList<E> implements List<E> {
 
     /**
      * 元素大小

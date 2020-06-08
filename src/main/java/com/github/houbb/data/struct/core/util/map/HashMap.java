@@ -63,7 +63,7 @@ public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V> {
      * 桶里放置的是一个链表。
      *
      * 可以理解为 table 是一个 ArrayList
-     * arrayList 中每一个元素，都是一个 LinkedList
+     * arrayList 中每一个元素，都是一个 DoubleLinkedList
      */
     private List<List<Entry<K, V>>> table;
 

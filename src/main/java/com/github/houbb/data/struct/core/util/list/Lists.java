@@ -10,7 +10,7 @@ import java.util.List;
  *
  * 数组工具类
  * （1）ArrayList
- * （2）LinkedList
+ * （2）DoubleLinkedList
  * （3）CowList
  * （4）SkipList
  *
@@ -42,6 +42,21 @@ public final class Lists {
         List<E> list = new ArrayList<>(elements.length);
         list.addAll(Arrays.asList(elements));
         return list;
+    }
+
+    /**
+     * 输出
+     *
+     * 1. 用于没有实现 iterator
+     * @param list 列表
+     * @param <E> 泛型
+     * @since 0.0.3
+     */
+    public static <E> void print(final List<E> list) {
+        for(int i = 0; i < list.size(); i++) {
+            E elem = list.get(i);
+            System.out.print(elem+"->");
+        }
     }
 
 }

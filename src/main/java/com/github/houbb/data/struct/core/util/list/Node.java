@@ -23,6 +23,24 @@ class Node<E> {
      */
     private Node<E> next;
 
+    /**
+     * @param value 值
+     * @since 0.0.3
+     */
+    public Node(E value) {
+        this(value, null);
+    }
+
+    /**
+     *
+     * @param value 值
+     * @param previous 前一个元素
+     * @since 0.0.3
+     */
+    public Node(E value, Node<E> previous) {
+        this(value, previous, null);
+    }
+
     public Node(E value, Node<E> previous, Node<E> next) {
         this.value = value;
         this.previous = previous;
