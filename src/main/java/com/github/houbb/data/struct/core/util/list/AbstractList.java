@@ -77,7 +77,7 @@ public abstract class AbstractList<E> extends AbstractListAdaptor<E> {
     public int indexOf(Object o) {
         Node<E> node = this.head;
 
-        for(int i = 0 ; i < this.size-1; i++) {
+        for(int i = 0 ; i < this.size; i++) {
             E value = node.value();
 
             // 这里是否考虑 NULL？暂时忽略

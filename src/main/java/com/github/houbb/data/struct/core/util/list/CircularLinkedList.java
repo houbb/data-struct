@@ -1,5 +1,7 @@
 package com.github.houbb.data.struct.core.util.list;
 
+import com.github.houbb.heaven.util.util.CollectionUtil;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -69,8 +71,9 @@ public class CircularLinkedList<E> extends AbstractList<E> {
         E result = null;
         if(index == 0) {
             // 直接忽略旧的 head
-            result = this.head.value();
-            this.head = this.head.next();
+            Node<E> oldHead = this.head;
+            result = oldHead.value();
+            this.head = oldHead.next();
             // 更新尾巴节点到头结点的引用
             this.tail.next(this.head);
         } else {
@@ -84,7 +87,7 @@ public class CircularLinkedList<E> extends AbstractList<E> {
             //3. 如果删除的是最后一个节点
             if(index == this.size - 1) {
                 this.tail = previousNode;
-                this.tail.next(this.tail);
+                this.tail.next(this.head);
             }
         }
 
@@ -93,36 +96,35 @@ public class CircularLinkedList<E> extends AbstractList<E> {
     }
 
     public static void main(String[] args) {
-        CircularLinkedList<Integer> list = new CircularLinkedList<>();
+        CircularLinkedList<String> list = new CircularLinkedList<>();
 
         //1. 初始化
         final int total = 41;
         final int space = 3;
         for(int i = 0; i < total; i++) {
-            list.add(i+1);
+            list.add(String.valueOf(i+1));
         }
 
         // 筛选（找到第三个元素，并且移除，直到列表为空）
-        Node<Integer> node = list.head;
+        List<String> removeList = new ArrayList<>();
+        Node<String> node = null;
 
-        List<Integer> removeList = new ArrayList<>();
-        while (!list.isEmpty()) {
+        while (removeList.size() < total) {
             for(int i = 0; i < space; i++) {
-                node = node.next();
+                if(node == null) {
+                    node = list.head;
+                } else {
+                    node = node.next();
+                }
             }
 
-            Integer value = node.value();
+            String value = node.value();
             removeList.add(value);
 
-            if(removeList.size() >= total) {
-                break;
-            }
-
-            // 移除
             list.remove(value);
         }
 
-        System.out.println(removeList);
+        Lists.print(removeList);
     }
 
 }

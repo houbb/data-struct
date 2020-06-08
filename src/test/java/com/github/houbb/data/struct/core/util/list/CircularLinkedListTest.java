@@ -22,17 +22,16 @@ public class CircularLinkedListTest {
      */
     @Test
     public void josephRingTest() {
-        List<Integer> list = new CircularLinkedList<>();
+        List<String> list = new CircularLinkedList<>();
+//        list.add("22");
+//        list.add("38");
+        list.add("41");
 
-        //1. 初始化
-        final int total = 31;
-        final int space = 3;
-        for(int i = 0; i < total; i++) {
-            list.add(i);
-        }
+        System.out.println(list.indexOf("41"));
+        list.remove("41");
         Lists.print(list);
-
-        //2. 删除
     }
+
+
 
 }
