@@ -4,7 +4,6 @@ import java.util.Map;
 
 /**
  * 默认的 map entry
- * TODO: 调整为 fluent 模式。
  * @author binbin.hou
  * @since 0.0.1
  */
@@ -13,6 +12,14 @@ public class DefaultMapEntry<K,V> implements Map.Entry<K,V>{
     private K key;
 
     private V value;
+
+    public DefaultMapEntry() {
+    }
+
+    public DefaultMapEntry(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
 
     @Override
     public K getKey() {
@@ -34,4 +41,10 @@ public class DefaultMapEntry<K,V> implements Map.Entry<K,V>{
         return this.value;
     }
 
+    @Override
+    public String toString() {
+        return "{" +key +
+                ": " + value +
+                '}';
+    }
 }

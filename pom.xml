@@ -25,7 +25,8 @@
         <project.compiler.level>1.7</project.compiler.level>
 
         <!--============================== INTER ==============================-->
-        <heaven.version>0.1.74</heaven.version>
+        <heaven.version>0.1.118</heaven.version>
+        <log-integration.version>1.1.8</log-integration.version>
 
         <!--============================== OTHER ==============================-->
         <junit.version>4.12</junit.version>
@@ -40,6 +41,11 @@
                 <groupId>com.github.houbb</groupId>
                 <artifactId>heaven</artifactId>
                 <version>${heaven.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.houbb</groupId>
+                <artifactId>log-integration</artifactId>
+                <version>${log-integration.version}</version>
             </dependency>
 
             <!--============================== OTHER ==============================-->
@@ -61,6 +67,11 @@
         <dependency>
             <groupId>com.github.houbb</groupId>
             <artifactId>heaven</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>log-integration</artifactId>
         </dependency>
 
         <!--============================== OTHER ==============================-->
