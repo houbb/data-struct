@@ -23,4 +23,16 @@ public class MyHashMapTest {
         map.put("3", "2");
     }
 
+    @Test
+    public void removeTest() {
+        MyHashMap<String, String> map = new MyHashMap<>(2, true);
+        map.put("1", "1");
+        map.put("2", "2");
+        map.put("3", "3");
+
+        map.remove("3");
+        map.remove("2");
+        map.remove("1");
+    }
+
 }
