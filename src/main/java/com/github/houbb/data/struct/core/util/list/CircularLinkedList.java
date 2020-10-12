@@ -1,8 +1,5 @@
 package com.github.houbb.data.struct.core.util.list;
 
-import com.github.houbb.heaven.util.util.CollectionUtil;
-
-import java.util.Iterator;
 import java.util.List;
 
 /**
