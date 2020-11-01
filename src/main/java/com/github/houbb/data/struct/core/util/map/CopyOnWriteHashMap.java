@@ -1,4 +1,4 @@
-package com.github.houbb.data.struct.core.concurrent.map;
+package com.github.houbb.data.struct.core.util.map;
 
 import java.util.Collection;
 import java.util.HashMap;

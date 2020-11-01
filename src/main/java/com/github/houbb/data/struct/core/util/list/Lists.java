@@ -39,7 +39,7 @@ public final class Lists {
             return Collections.emptyList();
         }
 
-        List<E> list = new ArrayList<>(elements.length);
+        List<E> list = new MyArrayList<>(elements.length);
         list.addAll(Arrays.asList(elements));
         return list;
     }

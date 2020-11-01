@@ -103,7 +103,7 @@ public class CircularLinkedList<E> extends AbstractList<E> {
         }
 
         // 筛选（找到第三个元素，并且移除，直到列表为空）
-        List<String> removeList = new ArrayList<>();
+        List<String> removeList = new MyArrayList<>();
         Node<String> node = null;
 
         while (removeList.size() < total) {

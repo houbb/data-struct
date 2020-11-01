@@ -17,7 +17,7 @@ import java.util.*;
  * @since 0.0.1
  * @param <E> elemType
  */
-public class ArrayList<E> implements List<E>, Serializable {
+public class MyArrayList<E> implements List<E>, Serializable {
 
     /**
      * 存放列表信息
@@ -38,7 +38,7 @@ public class ArrayList<E> implements List<E>, Serializable {
      * 默认大小为 8
      * @since 0.0.1
      */
-    public ArrayList() {
+    public MyArrayList() {
         this(8);
     }
 
@@ -47,7 +47,7 @@ public class ArrayList<E> implements List<E>, Serializable {
      * @param capacity 容量大小
      * @since 0.0.1
      */
-    public ArrayList(final int capacity) {
+    public MyArrayList(final int capacity) {
         array = new Object[capacity];
         this.size = 0;
     }
@@ -365,7 +365,7 @@ public class ArrayList<E> implements List<E>, Serializable {
         }
 
         // 做一份拷贝，避免坑
-        List<E> newList = new ArrayList<>(size);
+        List<E> newList = new MyArrayList<>(size);
 
         for(int i = fromIndex; i <= toIndex; i++) {
             newList.add(this.get(i));
@@ -424,14 +424,14 @@ public class ArrayList<E> implements List<E>, Serializable {
         @Override
         @SuppressWarnings("unchecked")
         public E next() {
-            E result = ArrayList.this.get(cursor);
+            E result = MyArrayList.this.get(cursor);
             cursor++;
             return result;
         }
 
         @Override
         public void remove() {
-            ArrayList.this.remove(cursor);
+            MyArrayList.this.remove(cursor);
         }
 
     }
@@ -460,19 +460,19 @@ public class ArrayList<E> implements List<E>, Serializable {
 
         @Override
         public E previous() {
-            return ArrayList.this.get(--cursor);
+            return MyArrayList.this.get(--cursor);
         }
 
         @Override
         public void set(E e) {
             int lastReturn = cursor-1;
-            ArrayList.this.set(lastReturn, e);
+            MyArrayList.this.set(lastReturn, e);
         }
 
         @Override
         public void add(E e) {
             // 当前 index 添加元素
-            ArrayList.this.add(cursor, e);
+            MyArrayList.this.add(cursor, e);
             cursor++;
         }
     }
