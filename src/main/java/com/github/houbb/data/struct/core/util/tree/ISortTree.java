@@ -25,6 +25,14 @@ public interface ISortTree<V extends Comparable<? super V>> {
     void add(V data);
 
     /**
+     * 删除节点
+     * @param data 元素
+     * @since 0.0.4
+     * @return 是否删除
+     */
+    boolean remove(V data);
+
+    /**
      * 返回元素的个数
      * @return 个数
      * @since 0.0.4
