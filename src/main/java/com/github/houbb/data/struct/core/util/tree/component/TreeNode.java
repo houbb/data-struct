@@ -1,8 +1,9 @@
 package com.github.houbb.data.struct.core.util.tree.component;
 
 /**
+ * 树节点
  * @author binbin.hou
- * @since 1.0.0
+ * @since 0.0.4
  */
 public class TreeNode<V extends Comparable<? super V>> {
 
@@ -53,4 +54,5 @@ public class TreeNode<V extends Comparable<? super V>> {
     public void setData(V data) {
         this.data = data;
     }
+
 }

@@ -162,17 +162,22 @@ public class BinarySearchTree<V extends Comparable<? super V>> implements ISortT
 
 
     @Override
-    public int size() {
+    public int getSize() {
         return size(root);
     }
 
     @Override
-    public int maxDepth() {
+    public boolean isEmpty() {
+        return this.getSize() == 0;
+    }
+
+    @Override
+    public int getHeight() {
         return maxDepth(root);
     }
 
     @Override
-    public V minValue() {
+    public V getMinValue() {
         TreeNode<V> current = root;
         while (current != null && current.getLeft() != null) {
             current = current.getLeft();
@@ -182,7 +187,7 @@ public class BinarySearchTree<V extends Comparable<? super V>> implements ISortT
     }
 
     @Override
-    public V maxValue() {
+    public V getMaxValue() {
         TreeNode<V> current = root;
         while (current != null && current.getRight() != null) {
             current = current.getRight();
@@ -228,9 +233,9 @@ public class BinarySearchTree<V extends Comparable<? super V>> implements ISortT
 
     private void postOrder(List<V> list, TreeNode<V> treeNode) {
         if (treeNode == null) return;
-        list.add(treeNode.getData());
         postOrder(list, treeNode.getLeft());
         postOrder(list, treeNode.getRight());
+        list.add(treeNode.getData());
     }
 
     @Override
@@ -351,6 +356,11 @@ public class BinarySearchTree<V extends Comparable<? super V>> implements ISortT
         }
 
         // 专门输出一行，连接符号行 /\
+    }
+
+    @Override
+    public boolean isBalanced() {
+        return false;
     }
 
     private String leftPad(int xoffset, int offset, V value) {

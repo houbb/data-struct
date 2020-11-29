@@ -15,16 +15,16 @@ public class BinarySearchTreeTest {
         tree.add(1);
         tree.add(3);
 
-
         System.out.println(tree.inOrder());
         System.out.println(tree.preOrder());
+
         System.out.println(tree.postOrder());
         System.out.println(tree.levelOrder());
 
-        System.out.println(tree.minValue());
-        System.out.println(tree.maxValue());
-        System.out.println(tree.maxDepth());
-        System.out.println(tree.size());
+        System.out.println(tree.getMinValue());
+        System.out.println(tree.getMaxValue());
+        System.out.println(tree.getHeight());
+        System.out.println(tree.getSize());
 
         System.out.println(tree.contains(2));
         System.out.println(tree.contains(5));
@@ -75,21 +75,21 @@ public class BinarySearchTreeTest {
 
         tree.print();
 
-        tree.remove(9);
-        System.out.println("After Remove 9: ");
-        tree.print();
-
-        tree.remove(7);
-        System.out.println("After Remove 7: ");
-        tree.print();
-
-        tree.remove(2);
-        System.out.println("After Remove 2: ");
-        tree.print();
-
-        tree.remove(5);
-        System.out.println("After Remove 5: ");
-        tree.print();
+//        tree.remove(9);
+//        System.out.println("After Remove 9: ");
+//        tree.print();
+//
+//        tree.remove(7);
+//        System.out.println("After Remove 7: ");
+//        tree.print();
+//
+//        tree.remove(2);
+//        System.out.println("After Remove 2: ");
+//        tree.print();
+//
+//        tree.remove(5);
+//        System.out.println("After Remove 5: ");
+//        tree.print();
     }
 
     //1 2 3 4 5 6 7 8

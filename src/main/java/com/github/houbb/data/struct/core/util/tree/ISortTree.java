@@ -37,28 +37,35 @@ public interface ISortTree<V extends Comparable<? super V>> {
      * @return 个数
      * @since 0.0.4
      */
-    int size();
+    int getSize();
+
+    /**
+     * 是否为空
+     * @return 是否为空
+     * @since 0.0.5
+     */
+    boolean isEmpty();
 
     /**
      * 最大深度
      * @return 深度
      * @since 0.0.4
      */
-    int maxDepth();
+    int getHeight();
 
     /**
      * 获取最小值
      * @return 最小值
      * @since 0.0.4
      */
-    V minValue();
+    V getMinValue();
 
     /**
      * 获取最大值
      * @return 最大值
      * @since 0.0.4
      */
-    V maxValue();
+    V getMaxValue();
 
     /**
      * 中序遍历：即左-根-右遍历，对于给定的二叉树根，寻找其左子树；对于其左子树的根，再去寻找其左子树；递归遍历，直到寻找最左边的节点i，其必然为叶子，然后遍历i的父节点，再遍历i的兄弟节点。随着递归的逐渐出栈，最终完成遍历。
@@ -75,7 +82,7 @@ public interface ISortTree<V extends Comparable<? super V>> {
     List<V> preOrder();
 
     /**
-     * 先序遍历：即根-左-右遍历，不再详述。
+     * 后序遍历：即左-右-根遍历，不再详述。
      * @since 0.0.4
      * @return 结果
      */
@@ -107,5 +114,12 @@ public interface ISortTree<V extends Comparable<? super V>> {
      * @since 0.0.4
      */
     void print();
+
+    /**
+     * 是否为平衡树
+     * @return 平衡树
+     * @since 0.0.5
+     */
+    boolean isBalanced();
 
 }
